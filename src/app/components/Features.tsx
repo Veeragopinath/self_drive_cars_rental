@@ -44,7 +44,7 @@ const Features = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Our Service?</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm">
-            Since our inception fueled by a passion for automobiles, we've been dedicated to delivering
+            Since our inception fueled by a passion for automobiles, we&apos;ve been dedicated to delivering
             the best at every turn. We prioritize understanding the needs and expectations of car enthusiasts.
           </p>
         </div>

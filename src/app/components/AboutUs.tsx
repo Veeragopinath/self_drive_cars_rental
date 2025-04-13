@@ -6,7 +6,7 @@ const AboutUs = () => {
   const features = [
     'Service with Passion',
     'Reliability and Quality',
-    'We\'re Your Travel Companion'
+    'We&apos;re Your Travel Companion'
   ];
 
   return (
@@ -33,7 +33,7 @@ const AboutUs = () => {
                 About Us
               </h2>
               <p className="text-gray-600 mb-6">
-                Since our inception fueled by a passion for automobiles, we've been dedicated to delivering the best at every turn. 
+                Since our inception fueled by a passion for automobiles, we&apos;ve been dedicated to delivering the best at every turn. 
                 We prioritize understanding the needs and expectations of car enthusiasts.
               </p>
               <ul className="space-y-4">
