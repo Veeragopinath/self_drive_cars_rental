@@ -7,13 +7,28 @@ import BestCars from './components/BestCars';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <AboutUs />
-      <Features />
-      <HowItWorks />
-      <BestCars />
-    </main>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main className="min-h-screen pt-20">
+        <section id="home">
+          <Hero />
+        </section>
+        <section id="about">
+          <AboutUs />
+        </section>
+        <section id="features">
+          <Features />
+        </section>
+        <section id="how-it-works">
+          <HowItWorks />
+        </section>
+        <section id="best-cars">
+          <BestCars />
+        </section>
+        {/* Add a Footer component here later if needed */}
+      </main>
+    </>
   );
 }
