@@ -2,12 +2,10 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const pathname = usePathname();
   
   const navItems = [
     { name: 'Home', href: '#home', id: 'home' },
