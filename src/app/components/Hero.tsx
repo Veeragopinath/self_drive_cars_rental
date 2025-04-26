@@ -160,7 +160,7 @@ const Hero = () => {
                   </p>
                 </>
               )}
-              <button className="bg-blue-900 text-white px-8 py-3 rounded-full hover:bg-blue-800 flex items-center space-x-2 text-lg font-medium">
+              <button  style={{ backgroundColor: '#084282' }} className=" text-white px-8 py-3 rounded-full hover:bg-blue-800 flex items-center space-x-2 text-lg font-medium">
                 <span
                   style={{
                     fontFamily: 'Outfit',
@@ -257,48 +257,88 @@ const Hero = () => {
 
         {/* Booking Form */}
         <div className="bg-white rounded-xl shadow-xl p-8 mt-8 -mb-24 relative z-20">
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700">Pick Up Location</label>
+              <label
+              className="block text-sm font-medium text-gray-700"
+              style={{
+                fontFamily: 'Outfit',
+                fontWeight: 300,
+                fontSize: '16px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                textAlign: 'justify',
+                color: '#000000',
+              }}
+              >
+              Pick Up Location
+              </label>
               <input
-                type="text"
-                name="pickupLocation"
-                value={formData.pickupLocation}
-                onChange={handleChange}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900"
-                placeholder="Enter city or airport"
+              type="text"
+              name="pickupLocation"
+              value={formData.pickupLocation}
+              onChange={handleChange}
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900"
+              placeholder="Enter city or airport"
               />
             </div>
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700">Drop Location</label>
+              <label
+              className="block text-sm font-medium text-gray-700"
+              style={{
+                fontFamily: 'Outfit',
+                fontWeight: 300,
+                fontSize: '16px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                textAlign: 'justify',
+                color: '#000000',
+              }}
+              >
+              Drop Location
+              </label>
               <input
-                type="text"
-                name="dropLocation"
-                value={formData.dropLocation}
-                onChange={handleChange}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900"
-                placeholder="Enter city or airport"
+              type="text"
+              name="dropLocation"
+              value={formData.dropLocation}
+              onChange={handleChange}
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900"
+              placeholder="Enter city or airport"
               />
             </div>
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700">Pick Up Date</label>
+              <label
+              className="block text-sm font-medium text-gray-700"
+              style={{
+                fontFamily: 'Outfit',
+                fontWeight: 300,
+                fontSize: '16px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                textAlign: 'justify',
+                color: '#000000',
+              }}
+              >
+              Pick Up Date
+              </label>
               <input
-                type="date"
-                name="pickupDate"
-                value={formData.pickupDate}
-                onChange={handleChange}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900"
+              type="date"
+              name="pickupDate"
+              value={formData.pickupDate}
+              onChange={handleChange}
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900"
               />
             </div>
             <div className="flex items-end">
-              <button
-                type="submit"
-                className="w-full bg-blue-900 text-white px-6 py-2.5 rounded-lg hover:bg-blue-800 transition-colors duration-200 font-medium"
-              >
-                Search
-              </button>
+                <button
+                  type="submit"
+                  className="w-full text-white px-6 py-2.5 rounded-lg transition-colors duration-200 font-medium"
+                  style={{ backgroundColor: '#084282' }}
+                >
+                  Search
+                </button>
             </div>
-          </form>
+            </form>
         </div>
       </div>
     </div>

@@ -42,8 +42,32 @@ const Features = () => {
     <div className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Our Service?</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm">
+          <h2
+            className="mb-4"
+            style={{
+              fontFamily: 'Outfit, sans-serif',
+              fontWeight: 600,
+              fontSize: '36px',
+              lineHeight: '55px',
+              letterSpacing: '0%',
+              verticalAlign: 'middle',
+              color: '#000000'
+            }}
+          >
+            Why Choose Our Service?
+          </h2>
+          <p
+            className="max-w-2xl mx-auto text-sm"
+            style={{
+              fontFamily: 'Outfit, sans-serif',
+              fontWeight: 300,
+              fontSize: '20px',
+              lineHeight: '34px',
+              letterSpacing: '0%',
+              textAlign: 'center',
+              color: '#808080'
+            }}
+          >
             Since our inception fueled by a passion for automobiles, we&apos;ve been dedicated to delivering
             the best at every turn. We prioritize understanding the needs and expectations of car enthusiasts.
           </p>
@@ -57,8 +81,31 @@ const Features = () => {
                   {feature.icon}
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-blue-900 mb-4">{feature.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3
+                style={{
+                  fontFamily: 'Outfit, sans-serif',
+                  fontWeight: 600,
+                  fontSize: '20px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  verticalAlign: 'middle',
+                  color: '#000000'
+                }}
+                className="mb-4"
+              >
+                {feature.title}
+              </h3>
+              <p
+                style={{
+                  fontFamily: 'Outfit, sans-serif',
+                  fontWeight: 200,
+                  fontSize: '16px',
+                  lineHeight: '28px',
+                  letterSpacing: '0%',
+                  textAlign: 'justify',
+                  color: '#000000'
+                }}
+              >
                 {feature.description}
               </p>
             </div>
@@ -69,4 +116,4 @@ const Features = () => {
   );
 };
 
-export default Features; 
+export default Features;
