@@ -97,8 +97,17 @@ const Navbar = () => {
           {/* Login/Register Button */}
           <div className="hidden md:flex items-center space-x-4">
             <Link
-              href="/login" // Keep as page link or change to #login if it's a section
-              className="bg-blue-900 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-blue-800 transition-colors duration-200"
+              href="/login"
+              className="px-6 py-2 rounded-full transition-colors duration-200"
+              style={{
+                fontFamily: 'Outfit, sans-serif',
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                color: '#FFFFFF',
+                backgroundColor: '#1e3a8a', // Tailwind's blue-900
+              }}
             >
               Login/Register
             </Link>

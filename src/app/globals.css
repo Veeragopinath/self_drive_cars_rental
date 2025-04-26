@@ -34,6 +34,9 @@ body {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 255, 255, 255;
     --background-end-rgb: 255, 255, 255;
+    --font-montserrat: 'Montserrat', Arial, sans-serif;
+    --font-rajdhani: 'Rajdhani', Arial, sans-serif;
+    --font-protest-strike: 'Protest Strike', Arial, sans-serif;
   }
 
   html {
@@ -73,10 +76,13 @@ body {
     padding-top: 0.625rem;
     padding-bottom: 0.625rem;
     border-radius: 0 0 1.5rem 1.5rem;
-    font-weight: 500;
-    font-size: 1.05rem;
+    font-family: 'Outfit', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000;
     background: transparent;
-    color: #171717;
     transition: all 0.2s;
     z-index: 1;
   }
@@ -101,7 +107,7 @@ body {
   .nav-link-active {
     background: #1e3a8a;
     color: #fff;
-    font-weight: bold;
+    font-weight: 400;
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
     border: 3px solid #FFD700;
@@ -110,7 +116,7 @@ body {
     z-index: 3;
   }
   .nav-link-default {
-    color: #171717;
+    color: #000000;
     background: transparent;
     border: none;
   }
@@ -139,4 +145,14 @@ body {
 
 .delay-500 {
   animation-delay: 500ms;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+.font-rajdhani {
+  font-family: var(--font-rajdhani);
+}
+.font-protest-strike {
+  font-family: var(--font-protest-strike);
 }

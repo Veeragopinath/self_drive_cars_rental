@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat, Rajdhani, Outfit, Protest_Strike, Protest_Riot } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +10,32 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
+  weight: ["700"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+const rajdhani = Rajdhani({
+  weight: ["700"],
+  subsets: ["latin"],
+  variable: "--font-rajdhani",
+});
+const protestStrike = Protest_Strike({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-protest-strike",
+});
+const outfit = Outfit({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-outfit",
+});
+const protestRiot = Protest_Riot({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-protest-riot",
 });
 
 // SEO Metadata
@@ -61,8 +87,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Fonts fallback for Protest Strike */}
+        <link href="https://fonts.googleapis.com/css2?family=Protest+Strike:wght@400&display=swap" rel="stylesheet" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${rajdhani.variable} ${protestStrike?.variable || ''} ${outfit.variable} ${protestRiot.variable} antialiased`}
       >
         {children}
       </body>

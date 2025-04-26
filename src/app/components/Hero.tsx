@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import home1 from '../assets/home-1.svg';
 import car1 from '../assets/car1.svg';
 
@@ -38,13 +38,6 @@ const Hero = () => {
     }
   ];
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  //   }, 5000);
-  //   return () => clearInterval(timer);
-  // }, [slides.length]);
-
   const handleSlideChange = (index: number) => {
     setCurrentSlide(index);
   };
@@ -63,30 +56,124 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative"  style={{
-      backgroundImage: `url(${home1.src})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }}>
+    <div
+      className="relative"
+      style={{
+        backgroundImage: `url(${home1.src})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
         {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Left section - Text content */}
           <div className="md:col-span-6 z-10 pt-8">
             <div className="transition-all duration-500 transform">
-              <h1 className="text-5xl font-bold text-blue-900 mb-2">
-                {slides[currentSlide].title}
-              </h1>
-              <h1 className="text-7xl font-bold text-blue-900 mb-4">
-                {slides[currentSlide].subtitle}
-              </h1>
-              <p className="text-gray-600 mb-8 max-w-md">
-                {slides[currentSlide].description}
-              </p>
+              {/* Slide 1 Title & Subtitle */}
+              {currentSlide === 0 ? (
+                <>
+                  <h2
+                    className="text-3xl md:text-4xl font-normal mb-2 text-black"
+                    style={{
+                      fontFamily: 'Outfit',
+                      fontWeight: 300,
+                      fontSize: 30,
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      color: '#000000',
+                    }}
+                  >
+                    Get the Best
+                  </h2>
+                  <div className="leading-none">
+                    <span
+                      className="block text-blue-900 font-bold"
+                      style={{
+                        fontFamily: 'Protest Riot',
+                        fontWeight: 400,
+                        fontSize: 60,
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        color: '#084282',
+                      }}
+                    >
+                      CAR FOR
+                    </span>
+                    <span
+                      className="block text-blue-900 font-bold"
+                      style={{
+                        fontFamily: 'Protest Riot',
+                        fontWeight: 400,
+                        fontSize: 160,
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        color: '#084282',
+                      }}
+                    >
+                      RENT!
+                    </span>
+                  </div>
+                  <div className="mt-4 mb-6">
+                    <span
+                      className="inline-block text-blue-900 font-semibold text-lg md:text-xl tracking-wide"
+                      style={{
+                        fontFamily: 'Outfit',
+                        fontWeight: 500,
+                        fontSize: 20,
+                        lineHeight: '100%',
+                        letterSpacing: '10%',
+                        borderBottom: '4px solid #FFD700',
+                        paddingBottom: '2px',
+                      }}
+                    >
+                      Make your ride better!
+                    </span>
+                  </div>
+                  <p
+                    className="text-black text-lg mt-4 mb-8 max-w-xl"
+                    style={{
+                      fontFamily: 'Outfit',
+                      fontWeight: 300,
+                      fontSize: 20,
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      textAlign: 'justify',
+                      color: '#000000',
+                    }}
+                  >
+                    Donate Aid Society is the largest global crowdfunding community connecting nonprofits, largest globa
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h1 className="text-5xl font-bold text-blue-900 mb-2">
+                    {slides[currentSlide].title}
+                  </h1>
+                  <h1 className="text-7xl font-bold text-blue-900 mb-4">
+                    {slides[currentSlide].subtitle}
+                  </h1>
+                  <p className="text-gray-600 mb-8 max-w-md">
+                    {slides[currentSlide].description}
+                  </p>
+                </>
+              )}
               <button className="bg-blue-900 text-white px-8 py-3 rounded-full hover:bg-blue-800 flex items-center space-x-2 text-lg font-medium">
-                <span>Book Now</span>
+                <span
+                  style={{
+                    fontFamily: 'Outfit',
+                    fontWeight: 500,
+                    fontSize: 24,
+                    lineHeight: '100%',
+                    letterSpacing: '0%',
+                    verticalAlign: 'middle',
+                    color: '#FFFFFF',
+                  }}
+                >
+                  Book Now
+                </span>
                 <div className="bg-yellow-500 rounded-full w-8 h-8 flex items-center justify-center ml-2">
                   <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -94,7 +181,7 @@ const Hero = () => {
                 </div>
               </button>
             </div>
-            
+
             {/* Pagination dots */}
             <div className="flex mt-8 space-x-2">
               {slides.map((_, index) => (
@@ -105,11 +192,12 @@ const Hero = () => {
                     currentSlide === index ? 'bg-blue-900 scale-110' : 'bg-gray-300'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
+                  type="button"
                 />
               ))}
             </div>
           </div>
-          
+
           {/* Right section - Car image with offer */}
           <div className="md:col-span-6 relative">
             <div className="relative h-[400px] md:h-[500px]">
@@ -121,7 +209,7 @@ const Hero = () => {
                   }`}
                 >
                   <Image
-                    src={slide.image}
+                    src={typeof slide.image === 'string' ? slide.image : slide.image.src}
                     alt={slide.alt}
                     fill
                     className="object-contain"
@@ -129,11 +217,39 @@ const Hero = () => {
                   />
                 </div>
               ))}
-              
+
               {/* 10% OFF tag */}
-              <div className="absolute top-0 right-0 bg-blue-900 text-center py-4 px-6">
-                <p className="text-lg font-bold text-yellow-400">Get 10%</p>
-                <p className="text-4xl font-bold text-yellow-400 leading-tight">OFF</p>
+              <div
+                className="absolute top-[-43px] right-[108px] text-center py-3 px-6 flex flex-col items-end"
+                style={{ minWidth: '170px' }}
+              >
+                <span
+                  className="text-white font-bold tracking-wide leading-none"
+                  style={{
+                    fontFamily: 'Rajdhani, Montserrat, Arial, sans-serif',
+                    fontWeight: 700,
+                    fontSize: '55px',
+                    lineHeight: '100%',
+                    letterSpacing: '0%',
+                    verticalAlign: 'middle',
+                  }}
+                >
+                  Get 10%
+                </span>
+                <span
+                  className="text-yellow-400 font-extrabold"
+                  style={{
+                    fontFamily: 'Protest Strike, sans-serif',
+                    fontWeight: 400,
+                    fontSize: '120px',
+                    lineHeight: '100%',
+                    letterSpacing: '0%',
+                    verticalAlign: 'middle',
+                    color: '#F4BF2D',
+                  }}
+                >
+                  OFF
+                </span>
               </div>
             </div>
           </div>
@@ -189,4 +305,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
