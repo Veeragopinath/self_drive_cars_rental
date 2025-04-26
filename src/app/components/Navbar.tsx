@@ -10,10 +10,9 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'About Us', href: '#about', id: 'about' },
-    { name: 'Services', href: '#features', id: 'features' }, // Assuming Features acts as Services
-    { name: 'How It Works', href: '#how-it-works', id: 'how-it-works' }, // Assuming HowItWorks can be FAQ/How
-    { name: 'Best Cars', href: '#best-cars', id: 'best-cars' } // Assuming Best Cars section exists
-    // Add Contact Us section later if needed
+    { name: 'Services', href: '#features', id: 'features' },
+    { name: 'FAQ', href: '#faq', id: 'faq' },
+    { name: 'Contact Us', href: '#contact', id: 'contact' },
   ];
 
   // Function for smooth scrolling
@@ -74,12 +73,12 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="#home" onClick={(e) => handleScroll(e, 'home')} className="text-3xl font-bold text-blue-900">
-              Rento
+              ----
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4 h-full">
+          <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -87,11 +86,7 @@ const Navbar = () => {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleScroll(e, item.id)}
-                  className={`flex items-center justify-center px-5 py-2 text-lg font-medium transition-all duration-200 relative h-14 rounded-xl ${
-                    isActive
-                      ? 'bg-blue-900 text-white border-b-4 border-yellow-500' // Blue bg, white text, rounded, yellow bottom border
-                      : 'text-gray-700 hover:text-blue-900 hover:bg-blue-50' // Standard hover
-                  }`}
+                  className={`nav-link ${isActive ? 'nav-link-active' : 'nav-link-default'}`}
                 >
                   {item.name}
                 </Link>
@@ -130,11 +125,9 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu */}
-        <div
-          className={`md:hidden transition-all duration-300 ease-in-out absolute top-full left-0 right-0 bg-white shadow-md ${
-            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-          }`}
-        >
+        <div className={`md:hidden transition-all duration-300 ease-in-out absolute top-full left-0 right-0 bg-white shadow-md ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        }`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
@@ -143,23 +136,12 @@ const Navbar = () => {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleScroll(e, item.id)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    isActive
-                      ? 'bg-blue-900 text-white' // Simple active style for mobile
-                      : 'text-gray-700 hover:text-blue-900 hover:bg-blue-50'
-                  }`}
+                  className={`block nav-link ${isActive ? 'nav-link-active' : 'nav-link-default'}`}
                 >
                   {item.name}
                 </Link>
               );
             })}
-            <Link
-              href="/login"
-              className="block w-full text-center bg-blue-900 text-white px-4 py-2 rounded-md text-base font-medium hover:bg-blue-800 mt-4"
-              onClick={() => setIsOpen(false)}
-            >
-              Login/Register
-            </Link>
           </div>
         </div>
       </div>

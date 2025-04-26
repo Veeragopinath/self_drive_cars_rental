@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import home1 from '../assets/home-1.svg';
+import car1 from '../assets/car1.svg';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -17,7 +19,7 @@ const Hero = () => {
       title: "Get the Best",
       subtitle: "CAR FOR RENT!",
       description: "Drive your dreams with the largest global car rental service. Experience luxury and comfort at your pace.",
-      image: "https://images.unsplash.com/photo-1622200294772-e99a8cbdc960?q=80&w=1000",
+      image: car1,
       alt: "Mercedes Luxury Car"
     },
     {
@@ -36,12 +38,12 @@ const Hero = () => {
     }
   ];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [slides.length]);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % slides.length);
+  //   }, 5000);
+  //   return () => clearInterval(timer);
+  // }, [slides.length]);
 
   const handleSlideChange = (index: number) => {
     setCurrentSlide(index);
@@ -61,7 +63,13 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative bg-white">
+    <div className="relative"  style={{
+      backgroundImage: `url(${home1.src})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
         {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
